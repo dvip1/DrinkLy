@@ -17,7 +17,7 @@ console.log(pathname)
     <div className="App">
       <DataProvider>
       <BrowserRouter>
-     <div className={`${pathname=='/'?'absolute text-white ':'relative bg-black text-white m-0'} ${pathname=='/popular/:id'?'hidden':'block'}`}><Navbar setPath={setPathname}/></div> 
+     <div className={`${pathname=='/'?'absolute ':'relative bg-black m-0'} ${pathname=='/popular/:id'?'hidden':'block'} text-white`}><Navbar setPath={setPathname}/></div> 
       <Routes>
         <Route path="/" element={ <Hero/>}> </Route>
        <Route path="/popular" element={<Search/>} />
