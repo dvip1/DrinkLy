@@ -9,6 +9,7 @@ import CardDetails from "./components/cardDetails"
 
 
 
+
 function App() {
 let [pathname,setPathname]=useState("/")
 console.log(pathname)
@@ -19,9 +20,11 @@ console.log(pathname)
       <BrowserRouter>
      <div className={`${pathname=='/'?'absolute ':'relative bg-black m-0'} ${pathname=='/popular/:id'?'hidden':'block'} text-white`}><Navbar setPath={setPathname}/></div> 
       <Routes>
-        <Route path="/" element={ <Hero/>}> </Route>
+        <Route path="/" element={ <Hero/>}></Route>
+ 
        <Route path="/popular" element={<Search/>} />
        <Route path="/popular/:id" element={<CardDetails/>}/>
+       
       </Routes>
 
      
