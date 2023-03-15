@@ -13,7 +13,7 @@ function HeroCardsContainer(){
      let [data, isError, isLoading ,isFetching ,error ,refetch, linkInfo, setLinkInfo]=useContext(DataContext)
     return (
         <Swiper 
-        slidesPerView={3}   
+      
               spaceBetween={30}  centeredSlides={true} navigation={true}
                pagination={{dynamicBullets:true}} modules={[Navigation,Pagination,Keyboard,EffectCoverflow ]}
                keyboard={

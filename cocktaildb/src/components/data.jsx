@@ -8,8 +8,8 @@ export const DataContext=createContext();
 export let DataProvider=(props)=>{
 
     let [linkInfo, setLinkInfo]=useState({
-        query:null,
-        drinkName:null,
+        query:'search',
+        drinkName:'l',
         variable:'s'
     })
 

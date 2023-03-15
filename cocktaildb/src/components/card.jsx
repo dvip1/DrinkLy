@@ -7,7 +7,7 @@ let Card=(props)=>{
     <div className="">
         <div className="flex flex-col overflow-hidden">
             <img src={props.image} className="object-cover md:rounded-md"></img>
-            <p className="text-3xl">{props.title}</p>
+            <p className="text-3xl text-center">{props.title}</p>
         </div>
     </div>
     </NavLink> 
