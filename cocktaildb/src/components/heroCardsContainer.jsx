@@ -21,8 +21,10 @@ function HeroCardsContainer(){
                 {enabled:true}
                }
                autoplay={{
-                delay:1500,
-                disableOnInteraction:false
+                delay:2200,
+                disableOnInteraction:false,
+                
+                
                }}
                effect={"coverflow"}
                coverflowEffect={{
