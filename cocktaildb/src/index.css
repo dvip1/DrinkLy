@@ -7,7 +7,7 @@
 }
 
 .swiper {
-    width: 30vw;
+    width: 80vw;
    
   }
   
@@ -20,6 +20,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .swiper-pagination-bullet-active{
+    background-color: #d33232;
+  }
+
+  .swiper-button-next, .swiper-button-prev{
+    color: #d33232;
   }
 
   @media screen and (max-width:500px){

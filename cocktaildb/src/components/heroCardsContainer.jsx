@@ -12,16 +12,17 @@ import "swiper/css/navigation";
 function HeroCardsContainer(){
      let [data, isError, isLoading ,isFetching ,error ,refetch, linkInfo, setLinkInfo]=useContext(DataContext)
     return (
-        <Swiper 
-      
+      <div className="min-h-screen flex justify-center items-center"> 
+      <Swiper 
+                slidesPerView={3}
               spaceBetween={30}  centeredSlides={true} navigation={true}
-               pagination={{dynamicBullets:true}} modules={[Navigation,Pagination,Keyboard,EffectCoverflow ]}
+               pagination={{dynamicBullets:true,}} modules={[Navigation,Pagination,Keyboard,EffectCoverflow ]}
                keyboard={
                 {enabled:true}
                }
                effect={"coverflow"}
                coverflowEffect={{
-                rotate: 50,
+                rotate: 80,
                 stretch: 0,
                 depth: 100,
                 modifier: 1,
@@ -31,6 +32,7 @@ function HeroCardsContainer(){
                className="flex justify-center items-center">
             {data?.data.drinks.map(drink=><SwiperSlide className="" key={drink.idDrink}><HeroCard image={drink.strDrinkThumb} title={drink.strDrink} key={drink.idDrink} cardId={drink.idDrink}/></SwiperSlide>)}
         </Swiper>
+        </div>
     )
 }
 
