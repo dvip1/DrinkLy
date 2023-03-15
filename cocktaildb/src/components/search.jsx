@@ -17,7 +17,7 @@ function Search(){
 
    // console.log({isLoading, isFetching})
 
-   if(isLoading)
+   if(isLoading || isFetching)
       return console.log("Loading pls wait") 
 
     else if(isError)

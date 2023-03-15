@@ -2,6 +2,7 @@ import video from "/src/components/assets/video/video.mp4"
 import HeroCardsContainer from "./heroCardsContainer"
 
 
+
 function Hero(){
     return (
     <div>
@@ -13,7 +14,9 @@ function Hero(){
             <video src={video} autoPlay loop muted className="object-cover h-100v w-full object-center"/>
         </div>
         <div className="text-6xl min-h-screen">Loading...</div>
+        
         <HeroCardsContainer/>
+
      
         </div>
     )
