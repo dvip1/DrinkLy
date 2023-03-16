@@ -13,7 +13,7 @@ function Hero(){
             </div>
             <video src={video} autoPlay loop muted className="object-cover h-100v w-full object-center"/>
         </div>
-        <div className="text-6xl min-h-screen">Loading...</div>
+        <div className="text-6xl min-h-screen"></div>
         
         <HeroCardsContainer/>
 

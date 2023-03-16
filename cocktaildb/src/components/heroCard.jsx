@@ -5,9 +5,9 @@ let HeroCard=(props)=>{
   return (
   
     <div className="">
-        <div className="flex flex-col overflow-hidden">
-            <img src={props.image} className="object-cover md:rounded-md"></img>
-            <NavLink to={`/popular/${props.cardId}`}> <p className="esm:text-md d:text-3xl">{props.title}</p></NavLink> 
+        <div className="flex flex-col overflow-hidden bg-black">
+            <img src={props.image} className="object-cover  rounded-xl "></img>
+            <NavLink to={`/popular/${props.cardId}`}> <p className="esm:text-md d:text-3xl text-white bg-black">{props.title}</p></NavLink> 
         </div>
     </div>
     
