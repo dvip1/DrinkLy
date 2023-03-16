@@ -15,7 +15,7 @@ function HeroCardsContainer(){
     return (
       <div className="min-h-screen flex justify-center items-center bg-black"> 
       <Swiper 
-                slidesPerView={2}
+                slidesPerView={3}
               spaceBetween={30}  centeredSlides={true} navigation={true}
                pagination={{dynamicBullets:true,}}
                keyboard={
