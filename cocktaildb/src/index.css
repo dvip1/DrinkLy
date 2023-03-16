@@ -35,7 +35,7 @@
     height: var(--swiper-pagination-bullet-height,var(--swiper-pagination-bullet-size,8px));
     display: inline-block;
     border-radius: 50%;
-    background: var(--swiper-pagination-bullet-inactive-color,rgb(255, 255, 255));
+    background: var(--swiper-pagination-bullet-inactive-color,rgb(236, 236, 236));
     opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
   }
 
