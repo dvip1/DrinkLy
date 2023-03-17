@@ -18,7 +18,7 @@ let CardDetails=()=>{
             refetch()
         },[param.id]
     )*/
-   let detail= data.data.drinks.filter((drink)=>drink.idDrink===param.id)
+   let detail= data.drinks.filter((drink)=>drink.idDrink===param.id)
     
 
 console.log(detail)
@@ -26,9 +26,9 @@ console.log(detail)
         <div className="">
        {detail.map(drink=><>
     <img src={drink.strDrinkThumb} key={drink.idDrink}/>
-    <p className="">{drink.strDrink}</p>
-    <p className="">{drink.strAlcoholic}</p>
-    <p className="">{drink.strInstructions}</p>
+    <p className="" key={drink.idDrink*8}>{drink.strDrink}</p>
+    <p className="" key={drink.idDrink*6}>{drink.strAlcoholic}</p>
+    <p className="" key={drink.idDrink*9}>{drink.strInstructions}</p>
 
     </>
     )

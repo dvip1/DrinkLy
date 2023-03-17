@@ -32,7 +32,7 @@ function Search(){
             <button  className="border border-black" onClick={refetch}>Search</button>
         </div>  
 <div className="grid esm:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
-        {data && data.data.drinks.map((drink,index)=>(<Card image={drink.strDrinkThumb} title={drink.strDrink} key={drink.idDrink} cardId={drink.idDrink} index={index}/> )
+        {!isError && data?.drinks?.map((drink,index)=>(<Card image={drink.strDrinkThumb} title={drink.strDrink} key={drink.idDrink} cardId={drink.idDrink} index={index}/> )
 
 )}
        

@@ -38,7 +38,7 @@ function HeroCardsContainer(){
                grabCursor={true}
                modules={[Navigation,Pagination,Keyboard,EffectCoverflow, Autoplay ]}
                className="flex justify-center items-center">
-            {data?.data.drinks.map(drink=><SwiperSlide className="mb-8" key={drink.idDrink}><HeroCard image={drink.strDrinkThumb} title={drink.strDrink} key={drink.idDrink} cardId={drink.idDrink}/></SwiperSlide>)}
+            {data?.drinks?.map(drink=><SwiperSlide className="mb-8" key={drink.idDrink}><HeroCard image={drink.strDrinkThumb} title={drink.strDrink} key={drink.idDrink} cardId={drink.idDrink}/></SwiperSlide>)}
         </Swiper>
         </div>
     )
