@@ -7,11 +7,63 @@ function Categories(){
 
     return (
         <div className="min-h-screen">
-            <div className="h-full w-full bg-black flex justify-center items-end p-6">
-                <div className="h-40v esm:w-90v md:w-60v overflow-hidden"><div className="h-full w-full  hover:scale-125  transition-all" style={{backgroundImage:"url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+            <div className="min-h-screen w-full bg-black grid esm:grid-cols-2 esm:gap-2 md:grid-cols-3 md:gap-4 p-6">
+                <div className=" overflow-hidden relative col-span-2">
+                <p className="text-3xl text-white absolute bottom-4 left-2">Martini</p>   
+                    <div className="h-full w-full  hover:scale-125  transition-all" 
+                    style={{backgroundImage:"url('/src/components/assets/video/images/margarita-cocktail.jpg')",
                                                       backgroundSize:"cover",
                                                       backgroundPosition:"center",
-                                                      backgroundRepeat:"no-repeat"}}></div></div>
+                                                      backgroundRepeat:"no-repeat"}}>
+                                                   
+
+
+                        </div> 
+                    </div>
+                 <div className=" overflow-hidden relative">
+                      <p className="text-3xl text-white absolute bottom-4 left-2">Martini</p>   
+                    <div className="h-full w-full  hover:scale-125  transition-all" 
+                    style={{backgroundImage:"url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                                                      backgroundSize:"cover",
+                                                      backgroundPosition:"center",
+                                                      backgroundRepeat:"no-repeat"}}>
+                                                   
+
+                        </div>
+                    </div>
+                 <div className=" overflow-hidden relative">
+                      <p className="text-3xl text-white absolute bottom-4 left-2">Martini</p>   
+                    <div className="h-full w-full  hover:scale-125  transition-all" 
+                    style={{backgroundImage:"url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                                                      backgroundSize:"cover",
+                                                      backgroundPosition:"center",
+                                                      backgroundRepeat:"no-repeat"}}>
+                                                   
+
+                        </div>
+                    </div>
+                 <div className=" overflow-hidden relative">
+                      <p className="text-3xl text-white absolute bottom-4 left-2">Martini</p>   
+                    <div className="h-full w-full  hover:scale-125  transition-all" 
+                    style={{backgroundImage:"url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                                                      backgroundSize:"cover",
+                                                      backgroundPosition:"center",
+                                                      backgroundRepeat:"no-repeat"}}>
+                                                   
+
+                        </div>
+                    </div>
+                 <div className=" overflow-hidden relative">
+                      <p className="text-3xl text-white absolute bottom-4 left-2">Martini</p>   
+                    <div className="h-full w-full  hover:scale-125  transition-all" 
+                    style={{backgroundImage:"url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                                                      backgroundSize:"cover",
+                                                      backgroundPosition:"center",
+                                                      backgroundRepeat:"no-repeat"}}>
+                                                   
+
+                        </div>
+                    </div>
             </div>
 
         </div>
