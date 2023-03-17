@@ -1,5 +1,6 @@
 import video from "/src/components/assets/video/video.mp4"
 import HeroCardsContainer from "./heroCardsContainer"
+import Categories from "./categories"
 
 
 
@@ -16,6 +17,7 @@ function Hero(){
         <div className="text-6xl min-h-screen"></div>
         
         <HeroCardsContainer/>
+        <Categories/>
 
      
         </div>
