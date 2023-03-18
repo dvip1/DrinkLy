@@ -23,7 +23,8 @@ return response.data
 
 let {data, isLoading , error , isError, isFetching , refetch}=useQuery('cocktails',getData , {
     staleTime:300000 ,//this means that the data will be fetched again after 5 minutes so even if you change the tabs the data will be fetched again after 5 minutes only
-   enabled:true //if set to false it would mean that the query will be enabled only when the user clicks on the search button
+   enabled:true, //if set to false it would mean that the query will be enabled only when the user clicks on the search button
+   
 })
 
 
