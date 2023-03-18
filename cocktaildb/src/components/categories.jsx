@@ -11,7 +11,7 @@ function Categories(){
 
     return (
         <div className="min-h-screen">
-            <div className="min-h-screen w-full bg-black grid esm:grid-cols-2 esm:gap-2 md:grid-cols-3 md:gap-4 p-6">
+            <div className="min-h-screen w-full bg-black grid esm:grid-cols-2 esm:gap-2 md:grid-cols-3 md:gap-4 esm:p-5 md:p-6">
                 <div className=" overflow-hidden relative col-span-2">
                 <p className="text-3xl text-white absolute bottom-4 left-2">Martini</p>   
                     <div className="h-full w-full group">
