@@ -34,7 +34,20 @@ function Search(){
 <div className="grid esm:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
         {!isError && data?.drinks?data.drinks.map((drink,index)=>(<Card image={drink.strDrinkThumb} title={drink.strDrink} key={drink.idDrink} cardId={drink.idDrink} index={index}/> )
 
-):<p className="text-2xl">Please search a valid Drink name</p>}
+): <div className="p-4"> 
+<p className="text-2xl">Please search a valid Drink name</p>
+<p className="text-xl text-yellow-500">Suggestions:</p> 
+<ul className="">
+  <li>Tequila</li>
+  <li>Martini</li>
+  <li>Gin</li>
+  <li>Brandy</li>
+  <li>Cocktail</li>
+  <li>Lassi</li>
+  <li>Margarita</li>
+  <li>Rum</li>
+</ul>
+</div>}
        
      </div>
         </div>

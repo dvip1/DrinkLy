@@ -2,6 +2,7 @@ import { DataContext } from "./data";
 import { useContext } from "react";
 import {NavLink} from "react-router-dom"
 
+
 function Categories(){
     let [data, isError, isLoading ,isFetching ,error ,refetch, linkInfo, setLinkInfo]=useContext(DataContext)
 
@@ -19,6 +20,10 @@ function Categories(){
 
 
                         </div> 
+                        <div className=" hover:flex absolute h-full w-full bg-red-300 top-0 right-0 bottom-0 left-0">
+                        <NavLink to="/popular" onClick={() => ((setLinkInfo(prev => ({...prev, drinkName: "Martini"})),refetch()))}>Know more</NavLink>
+
+                        </div>
                     </div>
                  <div className=" overflow-hidden relative">
                       <p className="text-3xl text-white absolute bottom-4 left-2">Martini</p>   
