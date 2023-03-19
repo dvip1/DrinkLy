@@ -16,11 +16,52 @@ let Card = (props) => {
   ] = useContext(DataContext);
 
   let [activeColor, setActiveColor] = useState({
-    colorSet: false,
-    cartColor: false,
+    colorSet:
+      false ||
+      data.drinks.filter(
+        (drink) =>
+          localStorage.getItem("WishlistStorage") === drink.strDrink &&
+          drink.strDrink === props.daata.strDrink
+      ).length > 0,
+    cartColor: false || 
+    data.drinks.filter(
+      (drink) =>
+        localStorage.getItem("CartStorage") === drink.strDrink &&
+        drink.strDrink === props.daata.strDrink
+    ).length > 0
   });
   console.log(activeColor.colorSet);
-  console.log(localStorage.getItem("drink"));
+  console.log(localStorage.getItem("WishlistStorage"));
+  console.log(localStorage.getItem("CartStorage"));
+
+  function WishlistHandler() {
+    const currentDrink = props.daata.strDrink;
+    const isAddedToWishlist = localStorage.getItem("WishlistStorage") === currentDrink;
+  
+    setActiveColor((prev) => ({
+      ...prev,
+      colorSet: !prev.colorSet,
+    }));
+  
+    if (isAddedToWishlist) {
+      localStorage.removeItem("WishlistStorage");
+    } else {
+      localStorage.setItem("WishlistStorage", currentDrink);
+    }
+  }
+  
+
+  function CartHandler() {
+    setActiveColor((prev) => ({
+      ...prev,
+      cartColor: !prev.cartColor,
+    }));
+    console.log(props.daata);
+    localStorage.setItem("CartStorage", props.daata.strDrink);
+  }
+
+
+
   return (
     <>
       <div className="">
@@ -35,14 +76,7 @@ let Card = (props) => {
               className={`w-6 h-6 hover:text-red-600 m-1 ${
                 activeColor.colorSet ? "text-red-600" : ""
               } `}
-              onClick={() => {
-                setActiveColor((prev) => ({
-                  ...prev,
-                  colorSet: !prev.colorSet,
-                }));
-                console.log(props.daata);
-                localStorage.setItem("drink", `{${props.daata.strDrink}}`);
-              }}
+              onClick={WishlistHandler}
             >
               <path
                 strokeLinecap="round"
@@ -60,13 +94,7 @@ let Card = (props) => {
               className={`w-6 h-6 hover:text-blue-600 m-1 ${
                 activeColor.cartColor ? "text-blue-600" : ""
               } `}
-              onClick={() => {
-                setActiveColor((prev) => ({
-                  ...prev,
-                  cartColor: !prev.cartColor,
-                }));
-                console.log(props.daata);
-              }}
+              onClick={CartHandler}
             >
               <path
                 strokeLinecap="round"
