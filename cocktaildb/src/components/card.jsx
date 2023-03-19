@@ -2,18 +2,13 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { DataContext } from "./data";
 import { useContext } from "react";
+import { userDataContext } from "./userData/userData";
 
 let Card = (props) => {
-  let [
-    data,
-    isError,
-    isLoading,
-    isFetching,
-    error,
-    refetch,
-    linkInfo,
-    setLinkInfo,
-  ] = useContext(DataContext);
+  let [data] = useContext(DataContext);
+
+  let [wishlistData, setWishlistData, cartData, setCartData] =
+    useContext(userDataContext);
 
   let [activeColor, setActiveColor] = useState({
     colorSet:
@@ -23,44 +18,43 @@ let Card = (props) => {
           localStorage.getItem("WishlistStorage") === drink.strDrink &&
           drink.strDrink === props.daata.strDrink
       ).length > 0,
-    cartColor: false || 
-    data.drinks.filter(
-      (drink) =>
-        localStorage.getItem("CartStorage") === drink.strDrink &&
-        drink.strDrink === props.daata.strDrink
-    ).length > 0
+    cartColor: false,
   });
   console.log(activeColor.colorSet);
   console.log(localStorage.getItem("WishlistStorage"));
-  console.log(localStorage.getItem("CartStorage"));
 
   function WishlistHandler() {
     const currentDrink = props.daata.strDrink;
-    const isAddedToWishlist = localStorage.getItem("WishlistStorage") === currentDrink;
-  
+    const isAddedToWishlist =
+      localStorage.getItem("WishlistStorage") === currentDrink;
+
     setActiveColor((prev) => ({
       ...prev,
       colorSet: !prev.colorSet,
     }));
-  
+
     if (isAddedToWishlist) {
       localStorage.removeItem("WishlistStorage");
     } else {
       localStorage.setItem("WishlistStorage", currentDrink);
     }
   }
-  
 
   function CartHandler() {
     setActiveColor((prev) => ({
       ...prev,
       cartColor: !prev.cartColor,
     }));
+
+    let Cart = {
+      name: props.daata.strDrink,
+      image: props.daata.strDrinkThumb,
+    };
+
+    setCartData((prev) => [...prev, Cart]);
+
     console.log(props.daata);
-    localStorage.setItem("CartStorage", props.daata.strDrink);
   }
-
-
 
   return (
     <>

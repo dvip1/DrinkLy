@@ -5,6 +5,7 @@ import {DataProvider} from "./components/data"
 import Navbar from "./components/Navbar"
 import Search from "./components/search"
 import CardDetails from "./components/cardDetails"
+import { UserDataProvider } from "./components/userData/userData"
 
 
 
@@ -17,6 +18,7 @@ console.log(pathname)
   return (
     <div className="App">
       <DataProvider>
+        <UserDataProvider>
       <BrowserRouter>
      <div className={`${pathname=='/'?'absolute ':'relative bg-black m-0'} ${pathname=='/popular/:id'?'hidden':'block'} text-white`}><Navbar setPath={setPathname}/></div> 
       <Routes>
@@ -29,7 +31,7 @@ console.log(pathname)
 
      
       </BrowserRouter>
-   
+      </UserDataProvider>
       </DataProvider>
 
     </div>
