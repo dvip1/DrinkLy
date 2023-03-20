@@ -4,7 +4,23 @@ import { createContext } from "react";
 export let userDataContext = createContext();
 
 export let UserDataProvider = (props) => {
-  let [wishlistData, setWishlistData] = useState([]);
+  let [wishlistData, setWishlistData] = useState(()=>{
+    let cartDataFromStorage = localStorage.getItem("wishlistData");
+    if (cartDataFromStorage) {
+      return JSON.parse(cartDataFromStorage);
+    } else {
+    return [] }
+  });
+
+  useEffect(()=>{
+    localStorage.setItem("wishlistData",JSON.stringify(wishlistData))
+  })
+
+
+
+
+
+
   let [cartData, setCartData] = useState(()=>{
     let cartDataFromStorage = localStorage.getItem("cartData");
     if (cartDataFromStorage) {
@@ -17,12 +33,9 @@ export let UserDataProvider = (props) => {
     localStorage.setItem("cartData", JSON.stringify(cartData));
   }, [cartData]);
 
-  useEffect(() => {
-    const cartDataFromStorage = localStorage.getItem("cartData");
-    if (cartDataFromStorage) {
-      setCartData(JSON.parse(cartDataFromStorage));
-    }
-  }, []);
+  
+
+
 
   return (
     <userDataContext.Provider

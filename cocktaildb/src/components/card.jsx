@@ -1,40 +1,47 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { DataContext } from "./data";
 import { useContext } from "react";
 import { userDataContext } from "./userData/userData";
 
 let Card = (props) => {
-  let [data] = useContext(DataContext);
-
   let [wishlistData, setWishlistData, cartData, setCartData] =
     useContext(userDataContext);
 
   let [activeColor, setActiveColor] = useState({
-    colorSet: false,
+    colorSet: false || wishlistData.filter((drink)=>props.daata.strDrink===drink.name).length>0 ,
     cartColor:
       false ||
       cartData.filter((drink) => drink.name === props.daata.strDrink).length >
         0,
   });
-  console.log(activeColor.colorSet);
-  console.log(localStorage.getItem("WishlistStorage"));
 
   function WishlistHandler() {
-    const currentDrink = props.daata.strDrink;
-    const isAddedToWishlist =
-      localStorage.getItem("WishlistStorage") === currentDrink;
-
-    setActiveColor((prev) => ({
+   setActiveColor((prev) => ({
       ...prev,
       colorSet: !prev.colorSet,
     }));
 
-    if (isAddedToWishlist) {
-      localStorage.removeItem("WishlistStorage");
-    } else {
-      localStorage.setItem("WishlistStorage", currentDrink);
+    let wishlist={
+      name:props.daata.strDrink,
+      image:props.daata.strDrinkThumb
     }
+
+     let isAddedTOWishlist=wishlistData.filter(drink=>props.daata.strDrink===drink.name).length>0
+
+     if(!isAddedTOWishlist){
+      setWishlistData((prev)=>[...prev, wishlist])
+     }else{
+      let deleteWishlistIndex=wishlistData.findIndex(drink=>props.daata.strDrink===drink.name)
+      setWishlistData(prev=>prev.filter((drink,index)=>{
+        if(deleteWishlistIndex!==index){
+          return true
+        }
+      }))
+     }
+
+   
+
+    
   }
 
   function CartHandler() {
