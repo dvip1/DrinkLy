@@ -5,7 +5,7 @@ let Cart=()=>{
     let [wishlistData, setWishlistData, cartData, setCartData] =
     useContext(userDataContext);
     return (
-        <div className="grid grid-cols-6">
+        <div className="grid grid-cols-6" key={cartData.id}>
             {cartData.map((drink)=>{
                 return (
                    <div className="">

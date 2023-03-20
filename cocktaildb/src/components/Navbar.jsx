@@ -16,6 +16,8 @@ let [cartData,wishlistData]=useContext(userDataContext)
   return (
     <div className="w-100v z-50 bg-transparent sticky top-0 transition-all duration-700">
       <div className="flex justify-between p-3   items-center bg-transparent">
+      <NavLink to="/" className="mx-3 ">
+            
         <svg
           version="1.0"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +45,7 @@ let [cartData,wishlistData]=useContext(userDataContext)
             <path d="M1780 568 c0 -7 14 -46 30 -87 37 -91 37 -105 0 -143 -32 -32 -38 -48 -17 -48 27 0 57 48 97 153 40 109 47 137 31 137 -7 0 -19 -30 -58 -140 -2 -8 -17 17 -32 59 -24 68 -51 104 -51 69z" />{" "}
           </g>{" "}
         </svg>
+      </NavLink>
         <nav className=" flex justify-between  esm:hidden md:flex mx-3 cursor-pointer ">
           <NavLink to="/" className="mx-3 ">
             Home
@@ -85,6 +88,8 @@ let [cartData,wishlistData]=useContext(userDataContext)
               />
             </svg>
           {cartData.length>0 &&  <p className="absolute top-0 left-1/2 -translate-y-4 text-red-700 bg-slate-50 rounded-full px-1">{cartData.length}</p>}
+          {console.log(cartData.length,"cart")}
+          {console.log(wishlistData.length,"wishlist")}
             </div>
           </NavLink>
         </nav>

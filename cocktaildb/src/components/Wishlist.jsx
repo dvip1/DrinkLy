@@ -6,7 +6,7 @@ let Wishtlist=()=>{
     useContext(userDataContext);
 
     return (
-        <div className="grid grid-cols-6">
+        <div className="grid grid-cols-6" key={wishlistData.id}>
             {wishlistData.map((drink)=>{
                 return (
                    <div className="">

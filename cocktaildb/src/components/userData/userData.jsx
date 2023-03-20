@@ -14,8 +14,9 @@ export let UserDataProvider = (props) => {
 
   useEffect(()=>{
     localStorage.setItem("wishlistData",JSON.stringify(wishlistData))
-  })
+  },[wishlistData])
 
+ 
 
 
 

@@ -22,7 +22,9 @@ let Card = (props) => {
 
     let wishlist={
       name:props.daata.strDrink,
-      image:props.daata.strDrinkThumb
+      image:props.daata.strDrinkThumb,
+      id:props.daata.idDrink
+
     }
 
      let isAddedTOWishlist=wishlistData.filter(drink=>props.daata.strDrink===drink.name).length>0
@@ -52,6 +54,7 @@ let Card = (props) => {
     let Cart = {
       name: props.daata.strDrink,
       image: props.daata.strDrinkThumb,
+      id:props.daata.idDrink*2 //this is done to make the id unique because the id of the drink in cart and wishlist is same
     };
     let isAddedToCart =
       cartData.filter((drink) => drink.name === props.daata.strDrink).length >
