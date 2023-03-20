@@ -12,13 +12,8 @@ let Card = (props) => {
 
   let [activeColor, setActiveColor] = useState({
     colorSet:
-      false ||
-      data.drinks.filter(
-        (drink) =>
-          localStorage.getItem("WishlistStorage") === drink.strDrink &&
-          drink.strDrink === props.daata.strDrink
-      ).length > 0,
-    cartColor: false,
+      false,
+    cartColor: false || cartData.filter((drink) => drink.name === props.daata.strDrink).length > 0,
   });
   console.log(activeColor.colorSet);
   console.log(localStorage.getItem("WishlistStorage"));
@@ -50,11 +45,19 @@ let Card = (props) => {
       name: props.daata.strDrink,
       image: props.daata.strDrinkThumb,
     };
-
-    setCartData((prev) => [...prev, Cart]);
-
-    console.log(props.daata);
-  }
+    let isAddedToCart=cartData.filter((drink)=>drink.name===props.daata.strDrink).length>0 //length>0 is important here because filter returns an array and if the array is empty then it will return false so that means the drink is not added to cart
+   if(!isAddedToCart){
+    setCartData((prev) => [...prev, Cart]);}
+    else{
+     let deleteDrinkIndex=cartData.findIndex((drink)=>drink.name===props.daata.strDrink)
+      console.log(deleteDrinkIndex)
+      if(deleteDrinkIndex!==-1){
+        setCartData(prevCardData=>prevCardData.splice(deleteDrinkIndex,1))
+      }
+      
+  //   setCartData(prevCardData=>prevCardData.filter((drink)=>{drink.name!==props.daata.strDrink}))
+    }
+}
 
   return (
     <>
