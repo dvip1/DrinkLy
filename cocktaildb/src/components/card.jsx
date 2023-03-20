@@ -11,9 +11,11 @@ let Card = (props) => {
     useContext(userDataContext);
 
   let [activeColor, setActiveColor] = useState({
-    colorSet:
-      false,
-    cartColor: false || cartData.filter((drink) => drink.name === props.daata.strDrink).length > 0,
+    colorSet: false,
+    cartColor:
+      false ||
+      cartData.filter((drink) => drink.name === props.daata.strDrink).length >
+        0,
   });
   console.log(activeColor.colorSet);
   console.log(localStorage.getItem("WishlistStorage"));
@@ -45,27 +47,28 @@ let Card = (props) => {
       name: props.daata.strDrink,
       image: props.daata.strDrinkThumb,
     };
-    let isAddedToCart=cartData.filter((drink)=>drink.name===props.daata.strDrink).length>0 //length>0 is important here because filter returns an array and if the array is empty then it will return false so that means the drink is not added to cart
-   if(!isAddedToCart){
-    setCartData((prev) => [...prev, Cart]);}
-    else{
-     let deleteDrinkIndex=cartData.findIndex((drink)=>drink.name===props.daata.strDrink)
-      console.log(deleteDrinkIndex)
-      
-      
-      setCartData(prevCardData =>
-        prevCardData.filter((drink, index) => {
+    let isAddedToCart =
+      cartData.filter((drink) => drink.name === props.daata.strDrink).length >
+      0; //length>0 is important here because filter returns an array and if the array is empty then it will return false so that means the drink is not added to cart
+    if (!isAddedToCart) {
+      setCartData((prev) => [...prev, Cart]);
+    } else {
+      let deleteDrinkIndex = cartData.findIndex(
+        (drink) => drink.name === props.daata.strDrink
+      );
+      console.log(deleteDrinkIndex);
+
+      setCartData((prevCartData) =>
+        prevCartData.filter((drink, index) => {
           if (index !== deleteDrinkIndex) {
-            return true;
-          } else {
-            console.log({ prevCardData, index });
-            return false;
+            return true; //here return true is important because if we don't return anything then it will return undefined and that will be added to the array
           }
         })
       );
-    console.log(cartData)
+
+      console.log(cartData);
     }
-}
+  }
 
   return (
     <>
