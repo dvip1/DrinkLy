@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar"
 import Search from "./components/search"
 import CardDetails from "./components/cardDetails"
 import { UserDataProvider } from "./components/userData/userData"
+import Cart from "./components/cart"
 
 
 
@@ -26,6 +27,7 @@ console.log(pathname)
  
        <Route path="/popular" element={<Search/>} />
        <Route path="/popular/:id" element={<CardDetails/>}/>
+       <Route path="/cart" element={<Cart/>}/>
        
       </Routes>
 
