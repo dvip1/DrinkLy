@@ -51,11 +51,19 @@ let Card = (props) => {
     else{
      let deleteDrinkIndex=cartData.findIndex((drink)=>drink.name===props.daata.strDrink)
       console.log(deleteDrinkIndex)
-      if(deleteDrinkIndex!==-1){
-        setCartData(prevCardData=>prevCardData.splice(deleteDrinkIndex,1))
-      }
       
-  //   setCartData(prevCardData=>prevCardData.filter((drink)=>{drink.name!==props.daata.strDrink}))
+      
+      setCartData(prevCardData =>
+        prevCardData.filter((drink, index) => {
+          if (index !== deleteDrinkIndex) {
+            return true;
+          } else {
+            console.log({ prevCardData, index });
+            return false;
+          }
+        })
+      );
+    console.log(cartData)
     }
 }
 
