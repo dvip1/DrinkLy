@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { userDataContext } from "./userData/userData";
+import { useContext } from "react";
 
 function Navbar(props) {
   let locationData = useLocation();
@@ -8,6 +10,8 @@ function Navbar(props) {
   useEffect(() => {
     props.setPath(location);
   }, [location]);
+
+let [cartData,wishlistData]=useContext(userDataContext)
 
   return (
     <div className="w-100v z-50 bg-transparent sticky top-0 transition-all duration-700">
@@ -66,7 +70,7 @@ function Navbar(props) {
             </svg>
           </NavLink>
           <NavLink to="/cart" className="mx-3 ">
-            <svg
+          <div className="relative">  <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -80,6 +84,8 @@ function Navbar(props) {
                 d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
               />
             </svg>
+          {cartData.length>0 &&  <p className="absolute top-0 left-1/2 -translate-y-4 text-red-700 bg-slate-50 rounded-full px-1">{cartData.length}</p>}
+            </div>
           </NavLink>
         </nav>
       </div>

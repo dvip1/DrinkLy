@@ -11,8 +11,7 @@ let Card = (props) => {
     colorSet: false || wishlistData.filter((drink)=>props.daata.strDrink===drink.name).length>0 ,
     cartColor:
       false ||
-      cartData.filter((drink) => drink.name === props.daata.strDrink).length >
-        0,
+      cartData.filter((drink) => drink.name === props.daata.strDrink).length >0,
   });
 
   function WishlistHandler() {
@@ -27,11 +26,11 @@ let Card = (props) => {
     }
 
      let isAddedTOWishlist=wishlistData.filter(drink=>props.daata.strDrink===drink.name).length>0
-
+     let deleteWishlistIndex=wishlistData.findIndex(drink=>props.daata.strDrink===drink.name)
      if(!isAddedTOWishlist){
       setWishlistData((prev)=>[...prev, wishlist])
      }else{
-      let deleteWishlistIndex=wishlistData.findIndex(drink=>props.daata.strDrink===drink.name)
+      
       setWishlistData(prev=>prev.filter((drink,index)=>{
         if(deleteWishlistIndex!==index){
           return true
