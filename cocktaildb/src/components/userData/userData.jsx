@@ -17,7 +17,8 @@ export let UserDataProvider = (props) => {
   },[wishlistData])
 
  
-
+  let cartLength=JSON.parse(localStorage.getItem("cartData")).length
+ 
 
 
 
@@ -34,13 +35,13 @@ export let UserDataProvider = (props) => {
     localStorage.setItem("cartData", JSON.stringify(cartData));
   }, [cartData]);
 
-  
+ 
 
 
 
   return (
     <userDataContext.Provider
-      value={[wishlistData, setWishlistData, cartData, setCartData]}
+      value={[wishlistData, setWishlistData, cartData, setCartData,cartLength]}
     >
       {props.children}
     </userDataContext.Provider>
