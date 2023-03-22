@@ -1,7 +1,7 @@
 import { DataContext } from "./data";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import Martini from "/src/components/assets/images/margarita-cocktail.jpg"
+import Martini from "../components/assets/images/margarita-cocktail.jpg"
 
 function Categories() {
   let [
