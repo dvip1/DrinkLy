@@ -8,7 +8,16 @@ import Gin from "../components/assets/images/gin.webp";
 import Vodka from "../components/assets/images/vodka.jpg";
 
 function Categories() {
-  let [refetch, setLinkInfo] = useContext(DataContext);
+  let [
+    data,
+    isError,
+    isLoading,
+    isFetching,
+    error,
+    refetch,
+    linkInfo,
+    setLinkInfo,
+  ] = useContext(DataContext);
 
   return (
     <div className="min-h-screen">

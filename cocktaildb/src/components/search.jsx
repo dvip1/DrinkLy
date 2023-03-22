@@ -29,18 +29,18 @@ function Search() {
     );
 
   return (
-    <div className="">
+    <div className="bg-[#3e3e42] text-white">
       <div className="flex justify-center items-center h-16">
         <div className="shadow-lg flex">
           <input
           type="text"
-          className=" border-[1.5px] border-r-0 border-slate-600 rounded-l-md h-8 esm:w-60v md:w-30v"
+          className=" border-[1.5px] border-r-0 border-slate-600 rounded-l-md h-8 esm:w-60v md:w-30v text-black"
           onChange={handleChange}
           name="search"
           value={linkInfo.drinkName}
         />
         <button
-          className="border-[1.5px] border-slate-800 rounded-r-md h-8 w-8 pl-[2px] bg-red-500"
+          className="border-[1.5px] border-slate-800 rounded-r-md h-8 w-8 pl-[2px] bg-[#d91923]"
           onClick={refetch}
         >
           <svg
