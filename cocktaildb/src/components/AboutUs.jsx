@@ -1,10 +1,12 @@
+import cocktails from "../components/assets/images/m-s-meeuwesen-QYWYnzvPTAQ-unsplash new.jpg"
+
 let AboutUs = () => {
   return (
     <div className="">
       <div className="relative">
         <img
           className="w-100v h-70v object-cover"
-          src="/src\components\assets\video\images\m-s-meeuwesen-QYWYnzvPTAQ-unsplash new.jpg"
+          src={cocktails}
         />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <p className="text-white text-7xl font-extrabold">About Us</p>

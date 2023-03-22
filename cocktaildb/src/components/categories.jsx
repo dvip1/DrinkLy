@@ -1,23 +1,14 @@
 import { DataContext } from "./data";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import Margarita from "../components/assets/images/margarita-cocktail.jpg"
-import Martini from "../components/assets/images/martini.webp"
-import Rum from "../components/assets/images/Rum.jpg"
-import Gin from "../components/assets/images/gin.webp"
-import Vodka from "../components/assets/images/vodka.jpg"
+import Margarita from "../components/assets/images/margarita-cocktail.jpg";
+import Martini from "../components/assets/images/martini.webp";
+import Rum from "../components/assets/images/Rum.jpg";
+import Gin from "../components/assets/images/gin.webp";
+import Vodka from "../components/assets/images/vodka.jpg";
 
 function Categories() {
-  let [
-    data,
-    isError,
-    isLoading,
-    isFetching,
-    error,
-    refetch,
-    linkInfo,
-    setLinkInfo,
-  ] = useContext(DataContext);
+  let [refetch, setLinkInfo] = useContext(DataContext);
 
   return (
     <div className="min-h-screen">
@@ -30,8 +21,7 @@ function Categories() {
             <div
               className="h-full w-full  group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
-                backgroundImage:
-                 `url(${Margarita})`,
+                backgroundImage: `url(${Margarita})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -69,8 +59,7 @@ function Categories() {
             <div
               className="h-full w-full  hover:scale-125   group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
-                backgroundImage:
-                  `url(${Martini})`,
+                backgroundImage: `url(${Martini})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -102,15 +91,12 @@ function Categories() {
         </div>
 
         <div className=" overflow-hidden relative">
-          <p className="text-3xl text-white absolute bottom-4 left-2">
-            Vodka
-          </p>
+          <p className="text-3xl text-white absolute bottom-4 left-2">Vodka</p>
           <div className="h-full w-full group">
             <div
               className="h-full w-full  hover:scale-125   group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
-                backgroundImage:
-                  `url(${Vodka})`,
+                backgroundImage: `url(${Vodka})`,
                 backgroundSize: "cover",
                 backgroundPosition: "bottom",
                 backgroundRepeat: "no-repeat",
@@ -142,15 +128,12 @@ function Categories() {
         </div>
 
         <div className=" overflow-hidden relative">
-          <p className="text-3xl text-white absolute bottom-4 left-2">
-            Gin
-          </p>
+          <p className="text-3xl text-white absolute bottom-4 left-2">Gin</p>
           <div className="h-full w-full group">
             <div
               className="h-full w-full  hover:scale-125   group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
-                backgroundImage:
-                  `url(${Gin})`,
+                backgroundImage: `url(${Gin})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -182,15 +165,12 @@ function Categories() {
         </div>
 
         <div className=" overflow-hidden relative">
-          <p className="text-3xl text-white absolute bottom-4 left-2">
-            Rum
-          </p>
+          <p className="text-3xl text-white absolute bottom-4 left-2">Rum</p>
           <div className="h-full w-full group">
             <div
               className="h-full w-full  hover:scale-125   group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
-                backgroundImage:
-                  `url(${Rum})`,
+                backgroundImage: `url(${Rum})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
