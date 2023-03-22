@@ -1,6 +1,7 @@
 import { DataContext } from "./data";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import Martini from "/src/components/assets/images/margarita-cocktail.jpg"
 
 function Categories() {
   let [
@@ -26,7 +27,7 @@ function Categories() {
               className="h-full w-full  group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
                 backgroundImage:
-                  "url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                 `url(${Martini})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -65,7 +66,7 @@ function Categories() {
               className="h-full w-full  hover:scale-125   group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
                 backgroundImage:
-                  "url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                  `url(${Martini})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -105,7 +106,7 @@ function Categories() {
               className="h-full w-full  hover:scale-125   group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
                 backgroundImage:
-                  "url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                  `url(${Martini})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -145,7 +146,7 @@ function Categories() {
               className="h-full w-full  hover:scale-125   group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
                 backgroundImage:
-                  "url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                  `url(${Martini})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
@@ -185,7 +186,7 @@ function Categories() {
               className="h-full w-full  hover:scale-125   group-hover:scale-125 group-hover:opacity-40 transition-all"
               style={{
                 backgroundImage:
-                  "url('/src/components/assets/video/images/margarita-cocktail.jpg')",
+                  `url(${Martini})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
