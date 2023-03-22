@@ -30,19 +30,37 @@ function Search() {
 
   return (
     <div className="">
-      <div className="flex">
-        <input
+      <div className="flex justify-center items-center h-16">
+        <div className="shadow-lg flex">
+          <input
           type="text"
-          className="border border-black"
+          className=" border-[1.5px] border-r-0 border-slate-600 rounded-l-md h-8 esm:w-60v md:w-30v"
           onChange={handleChange}
           name="search"
           value={linkInfo.drinkName}
         />
-        <button className="border border-black" onClick={refetch}>
-          Search
+        <button
+          className="border-[1.5px] border-slate-800 rounded-r-md h-8 w-8 pl-[2px] bg-red-500"
+          onClick={refetch}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6 text-white"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
         </button>
+        </div>
       </div>
-      <div className="grid esm:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10">
+      <div className="grid esm:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 md:m-2">
         {!isError && data?.drinks ? (
           data.drinks.map((drink, index) => (
             <Card
