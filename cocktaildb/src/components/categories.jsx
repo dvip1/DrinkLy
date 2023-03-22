@@ -1,6 +1,7 @@
 import { DataContext } from "./data";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import {motion} from "framer-motion"
 import Margarita from "../components/assets/images/margarita-cocktail.jpg";
 import Martini from "../components/assets/images/martini.webp";
 import Rum from "../components/assets/images/Rum.jpg";
@@ -22,7 +23,11 @@ function Categories() {
   return (
     <div className="min-h-screen">
       <div className="min-h-screen w-full bg-black grid esm:grid-cols-2 esm:gap-2 md:grid-cols-3 md:gap-4 esm:p-5 md:p-6">
-        <div className=" overflow-hidden relative col-span-2">
+        <motion.div 
+        animate={{scale:1}}
+        initial={{scale:0.3}}
+        transition={{duration:0.25}}
+        className=" overflow-hidden relative col-span-2">
           <p className="text-3xl text-white absolute bottom-4 left-2">
             Margarita
           </p>
@@ -59,8 +64,12 @@ function Categories() {
               </NavLink>
             </div>
           </div>
-        </div>
-        <div className=" overflow-hidden relative">
+        </motion.div>
+        <motion.div 
+         animate={{scale:1}}
+        initial={{scale:0.3}}
+        transition={{duration:0.3}}
+        className=" overflow-hidden relative">
           <p className="text-3xl text-white absolute bottom-4 left-2">
             Martini
           </p>
@@ -97,9 +106,13 @@ function Categories() {
               </NavLink>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className=" overflow-hidden relative">
+        <motion.div 
+         animate={{scale:1}}
+        initial={{scale:0.3}}
+        transition={{duration:0.35}}
+        className=" overflow-hidden relative">
           <p className="text-3xl text-white absolute bottom-4 left-2">Vodka</p>
           <div className="h-full w-full group">
             <div
@@ -134,9 +147,13 @@ function Categories() {
               </NavLink>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className=" overflow-hidden relative">
+        <motion.div 
+         animate={{scale:1}}
+        initial={{scale:0.3}}
+        transition={{duration:0.4}}
+        className=" overflow-hidden relative">
           <p className="text-3xl text-white absolute bottom-4 left-2">Gin</p>
           <div className="h-full w-full group">
             <div
@@ -171,9 +188,13 @@ function Categories() {
               </NavLink>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className=" overflow-hidden relative">
+        <motion.div 
+         animate={{scale:1}}
+        initial={{scale:0.3}}
+        transition={{duration:0.5}}
+        className=" overflow-hidden relative">
           <p className="text-3xl text-white absolute bottom-4 left-2">Rum</p>
           <div className="h-full w-full group">
             <div
@@ -208,7 +229,7 @@ function Categories() {
               </NavLink>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
