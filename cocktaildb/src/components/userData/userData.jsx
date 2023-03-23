@@ -17,6 +17,7 @@ export let UserDataProvider = (props) => {
   },[wishlistData])
 
  
+  let cartLength=JSON.parse(localStorage.getItem("cartData")).length
  
  
   let [cartData, setCartData] = useState(()=>{
