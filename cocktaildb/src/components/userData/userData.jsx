@@ -17,12 +17,8 @@ export let UserDataProvider = (props) => {
   },[wishlistData])
 
  
-  let cartLength=JSON.parse(localStorage.getItem("cartData")).length
  
-
-
-
-
+ 
   let [cartData, setCartData] = useState(()=>{
     let cartDataFromStorage = localStorage.getItem("cartData");
     if (cartDataFromStorage) {
@@ -35,7 +31,7 @@ export let UserDataProvider = (props) => {
     localStorage.setItem("cartData", JSON.stringify(cartData));
   }, [cartData]);
 
- 
+  let cartLength=JSON.parse(localStorage.getItem("cartData"))?.length
 
 
 

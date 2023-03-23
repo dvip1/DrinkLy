@@ -55,7 +55,7 @@ let Card = (props) => {
       id:props.daata.idDrink*2 //this is done to make the id unique because the id of the drink in cart and wishlist is same
     };
     let isAddedToCart =
-      cartData.filter((drink) => drink.name === props.daata.strDrink).length >
+      cartData?.filter((drink) => drink.name === props.daata.strDrink).length >
       0; //length>0 is important here because filter returns an array and if the array is empty then it will return false so that means the drink is not added to cart
     if (!isAddedToCart) {
       setCartData((prev) => [...prev, Cart]);
@@ -63,7 +63,7 @@ let Card = (props) => {
       let deleteDrinkIndex = cartData.findIndex(
         (drink) => drink.name === props.daata.strDrink
       );
-      console.log(deleteDrinkIndex);
+  
 
       setCartData((prevCartData) =>
         prevCartData.filter((drink, index) => {

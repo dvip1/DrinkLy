@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { DataContext } from "./data";
 import { useParams } from "react-router";
-import { useEffect } from "react";
-import axios from "axios";
+
 
 let CardDetails = () => {
   let [
