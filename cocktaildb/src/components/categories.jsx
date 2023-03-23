@@ -1,7 +1,7 @@
 import { DataContext } from "./data";
-import { useContext } from "react";
+import { useContext,useRef } from "react";
 import { NavLink } from "react-router-dom";
-import {motion} from "framer-motion"
+import {motion, useInView} from "framer-motion"
 import Margarita from "../components/assets/images/margarita-cocktail.jpg";
 import Martini from "../components/assets/images/martini.webp";
 import Rum from "../components/assets/images/Rum.jpg";
@@ -20,11 +20,14 @@ function Categories() {
     setLinkInfo,
   ] = useContext(DataContext);
 
+  const ref=useRef(null)
+  const isInView=useInView({ref:ref,threshold:0.5})
+
   return (
     <div className="min-h-screen">
       <div className="min-h-screen w-full bg-black grid esm:grid-cols-2 esm:gap-2 md:grid-cols-3 md:gap-4 esm:p-5 md:p-6">
         <motion.div 
-        animate={{scale:1}}
+        animate={isInView?{scale:1}:{scale:0.3}}
         initial={{scale:0.3}}
         transition={{duration:0.25}}
         className=" overflow-hidden relative col-span-2">
