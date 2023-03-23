@@ -27,7 +27,7 @@ let CardDetails = () => {
     )*/
   let detail = data.drinks.filter((drink) => drink.idDrink === param.id);
 
-  console.log(detail);
+
   return (
     <div className="">
       {detail.map((drink) => (
@@ -44,7 +44,7 @@ let CardDetails = () => {
           </p>
         </>
       ))}
-      {data && console.log(detail)}
+      
     </div>
   );
 };

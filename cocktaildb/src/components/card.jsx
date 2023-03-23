@@ -73,7 +73,7 @@ let Card = (props) => {
         })
       );
 
-      console.log(cartData);
+ 
     }
   }
 

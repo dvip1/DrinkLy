@@ -13,7 +13,7 @@ let Cart = () => {
         }
       });
     });
-    console.log(deleteCartIndex);
+
   }
 
   /*  

@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 function Navbar(props) {
   let locationData = useLocation();
-  //console.log(locationData.pathname)
+ 
   let location = locationData.pathname;
   useEffect(() => {
     props.setPath(location);
@@ -14,7 +14,7 @@ function Navbar(props) {
 
 let [cartData,wishlistData,cartLength]=useContext(userDataContext)
 
-console.log(cartLength,"storage cart")
+
 
   return (
     <div className="w-100v z-50 bg-transparent sticky top-0 transition-all duration-700">

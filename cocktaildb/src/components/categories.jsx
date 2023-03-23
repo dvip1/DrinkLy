@@ -20,16 +20,16 @@ function Categories() {
     setLinkInfo,
   ] = useContext(DataContext);
 
-  const ref=useRef(null)
-  const isInView=useInView({ref:ref,threshold:0.5})
+  //const isInView=useInView({ref:ref,threshold:0.5})
 
   return (
     <div className="min-h-screen">
       <div className="min-h-screen w-full bg-black grid esm:grid-cols-2 esm:gap-2 md:grid-cols-3 md:gap-4 esm:p-5 md:p-6">
         <motion.div 
-        animate={isInView?{scale:1}:{scale:0.3}}
-        initial={{scale:0.3}}
-        transition={{duration:0.25}}
+       
+        whileInView={{opacity:1,scale:1}}
+        initial={{scale:0.3, opacity:0}}
+        transition={{duration:0.40}}
         className=" overflow-hidden relative col-span-2">
           <p className="text-3xl text-white absolute bottom-4 left-2">
             Margarita
@@ -69,9 +69,9 @@ function Categories() {
           </div>
         </motion.div>
         <motion.div 
-         animate={{scale:1}}
-        initial={{scale:0.3}}
-        transition={{duration:0.3}}
+           whileInView={{opacity:1,scale:1}}
+        initial={{scale:0.3, opacity:0}}
+        transition={{duration:0.5}}
         className=" overflow-hidden relative">
           <p className="text-3xl text-white absolute bottom-4 left-2">
             Martini
@@ -112,9 +112,9 @@ function Categories() {
         </motion.div>
 
         <motion.div 
-         animate={{scale:1}}
-        initial={{scale:0.3}}
-        transition={{duration:0.35}}
+           whileInView={{opacity:1,scale:1}}
+        initial={{scale:0.3, opacity:0}}
+        transition={{duration:0.6}}
         className=" overflow-hidden relative">
           <p className="text-3xl text-white absolute bottom-4 left-2">Vodka</p>
           <div className="h-full w-full group">
@@ -153,9 +153,9 @@ function Categories() {
         </motion.div>
 
         <motion.div 
-         animate={{scale:1}}
-        initial={{scale:0.3}}
-        transition={{duration:0.4}}
+           whileInView={{opacity:1,scale:1}}
+        initial={{scale:0.3, opacity:0}}
+        transition={{duration:0.7}}
         className=" overflow-hidden relative">
           <p className="text-3xl text-white absolute bottom-4 left-2">Gin</p>
           <div className="h-full w-full group">
@@ -194,9 +194,9 @@ function Categories() {
         </motion.div>
 
         <motion.div 
-         animate={{scale:1}}
-        initial={{scale:0.3}}
-        transition={{duration:0.5}}
+           whileInView={{opacity:1,scale:1}}
+        initial={{scale:0.3, opacity:0}}
+        transition={{duration:0.8}}
         className=" overflow-hidden relative">
           <p className="text-3xl text-white absolute bottom-4 left-2">Rum</p>
           <div className="h-full w-full group">
