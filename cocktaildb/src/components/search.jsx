@@ -25,7 +25,7 @@ function Search() {
 
   if (isLoading || isFetching)
     return (
-      <div className="min-h-screen flex justify-center items-center">
+      <div className="min-h-[80vh] flex justify-center items-center">
        <div className="flex flex-col justify-center items-center">
          <p>Loading please wait...</p>
         <div className="w-16 h-16">
