@@ -1,7 +1,7 @@
 import { DataContext } from "./data";
 import { useContext,useRef } from "react";
 import { NavLink } from "react-router-dom";
-import {motion, useInView} from "framer-motion"
+import {motion} from "framer-motion"
 import Margarita from "../components/assets/images/margarita-cocktail.jpg";
 import Martini from "../components/assets/images/martini.webp";
 import Rum from "../components/assets/images/Rum.jpg";

@@ -21,7 +21,8 @@ let Card = (props) => {
     let wishlist={
       name:props.daata.strDrink,
       image:props.daata.strDrinkThumb,
-      id:props.daata.idDrink
+      id:props.daata.idDrink,
+      price:(Math.floor(Math.random()*10))+0.99
 
     }
 

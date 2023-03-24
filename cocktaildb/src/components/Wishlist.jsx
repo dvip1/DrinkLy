@@ -23,6 +23,7 @@ let Wishtlist = () => {
             <div className="">
               <img src={`${drink.image}`} className="w-[22vw]"></img>
               <p className="text-2xl text-center">{drink.name}</p>
+              <p>{drink.price}$</p>
               <button onClick={() => handleDelete(drink.id)} className="border">
                 Delete
               </button>
