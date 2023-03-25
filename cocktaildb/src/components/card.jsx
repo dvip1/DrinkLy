@@ -8,40 +8,46 @@ let Card = (props) => {
     useContext(userDataContext);
 
   let [activeColor, setActiveColor] = useState({
-    colorSet: false || wishlistData.filter((drink)=>props.daata.strDrink===drink.name).length>0 ,
-    cartColor: false || cartData.filter((drink) => drink.name === props.daata.strDrink).length >0,
+    colorSet:
+      false ||
+      wishlistData.filter((drink) => props.daata.strDrink === drink.name)
+        .length > 0,
+    cartColor:
+      false ||
+      cartData.filter((drink) => drink.name === props.daata.strDrink).length >
+        0,
   });
 
   function WishlistHandler() {
-   setActiveColor((prev) => ({
+    setActiveColor((prev) => ({
       ...prev,
       colorSet: !prev.colorSet,
     }));
 
-    let wishlist={
-      name:props.daata.strDrink,
-      image:props.daata.strDrinkThumb,
-      id:props.daata.idDrink,
-      price:(Math.floor(Math.random()*10))+0.99
+    let wishlist = {
+      name: props.daata.strDrink,
+      image: props.daata.strDrinkThumb,
+      id: props.daata.idDrink,
+      price: Math.floor(Math.random() * 10) + 0.99,
+    };
 
+    let isAddedTOWishlist =
+      wishlistData.filter((drink) => props.daata.strDrink === drink.name)
+        .length > 0;
+    let deleteWishlistIndex = wishlistData.findIndex(
+      (drink) => props.daata.strDrink === drink.name
+    );
+    if (!isAddedTOWishlist) {
+      setWishlistData((prev) => [...prev, wishlist]);
+    } else {
+      setWishlistData((prev) =>
+        prev.filter((drink, index) => {
+          if (deleteWishlistIndex !== index) {
+            return true;
+          }
+        })
+      );
     }
-
-     let isAddedTOWishlist=wishlistData.filter(drink=>props.daata.strDrink===drink.name).length>0
-     let deleteWishlistIndex=wishlistData.findIndex(drink=>props.daata.strDrink===drink.name)
-     if(!isAddedTOWishlist){
-      setWishlistData((prev)=>[...prev, wishlist])
-     }else{
-      
-      setWishlistData(prev=>prev.filter((drink,index)=>{
-        if(deleteWishlistIndex!==index){
-          return true
-        }
-      }))
-     }
-
-   
-
-    
   }
 
   function CartHandler() {
@@ -53,7 +59,7 @@ let Card = (props) => {
     let Cart = {
       name: props.daata.strDrink,
       image: props.daata.strDrinkThumb,
-      id:props.daata.idDrink*2 //this is done to make the id unique because the id of the drink in cart and wishlist is same
+      id: props.daata.idDrink * 2, //this is done to make the id unique because the id of the drink in cart and wishlist is same
     };
     let isAddedToCart =
       cartData?.filter((drink) => drink.name === props.daata.strDrink).length >
@@ -64,7 +70,6 @@ let Card = (props) => {
       let deleteDrinkIndex = cartData.findIndex(
         (drink) => drink.name === props.daata.strDrink
       );
-  
 
       setCartData((prevCartData) =>
         prevCartData.filter((drink, index) => {
@@ -73,8 +78,6 @@ let Card = (props) => {
           }
         })
       );
-
- 
     }
   }
 

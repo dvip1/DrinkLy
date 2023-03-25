@@ -2,19 +2,56 @@ import video from "/src/components/assets/video/video.mp4";
 import HeroCardsContainer from "./heroCardsContainer";
 import Categories from "./categories";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+
 
 function Hero() {
   return (
     <div>
       <div className="min-h-screen w-100v absolute">
         <div className=" z-30  absolute h-100v w-full flex justify-center items-center">
-          <motion.p
-          whileInView={{opacity:1, y:1}}
-          initial={{y:100,opacity:0}}
-          transition={{duration:0.8}}
-          className="text-6xl text-white font-extrabold">
-            Find the best Cocktails
-          </motion.p>
+          <motion.div
+            whileInView={{ opacity: 1, y: 1 }}
+            initial={{ y: 100, opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-6xl text-white font-extrabold flex justify-evenly md:flex-row esm:flex-col items-center "
+          >
+            <p> Find the best{" "}</p>
+            <Swiper
+            direction={"vertical"}
+            loop={true}
+            autoplay={{
+              delay:2000,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+            className="bg-transparent text-[#faf0a7] ml-2 newSwiper text-center">
+              <SwiperSlide className="bg-transparent ">
+                <p className="bg-transparent text-6xl">Cocktails</p>
+               </SwiperSlide>
+                <SwiperSlide className=" p-2">
+                <p className="text-6xl">Gins</p>
+                </SwiperSlide>
+                <SwiperSlide className="">
+                <p className="text-6xl">Wines</p>
+                </SwiperSlide>
+                <SwiperSlide className="">
+                <p className="text-6xl">Martini</p>
+                </SwiperSlide>
+                <SwiperSlide className="">
+                <p className="text-6xl">Scotch</p>
+                </SwiperSlide>
+                <SwiperSlide className="">
+                <p className="text-6xl">Beers</p>
+                </SwiperSlide>
+            </Swiper>
+          </motion.div>
         </div>
         <video
           src={video}

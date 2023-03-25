@@ -12,11 +12,21 @@ html{scroll-behavior: smooth;}
     width: 80vw;
    
   }
+
+  .swiper-vertical > .swiper-wrapper {
+    flex-direction: column;
+    background: transparent;
+  }
+
+  .newSwiper{
+    width: min-content !important;
+    height: 10vh;
+  }
   
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background:transparent;
   
     /* Center slide text vertically */
     display: flex;
