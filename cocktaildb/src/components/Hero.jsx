@@ -20,12 +20,14 @@ function Hero() {
             whileInView={{ opacity: 1, y: 1 }}
             initial={{ y: 100, opacity: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl text-white font-extrabold flex justify-evenly md:flex-row esm:flex-col items-center "
+            className="text-7xl text-white font-extrabold flex justify-evenly md:flex-row esm:flex-col items-center "
           >
             <p> Find the best{" "}</p>
             <Swiper
             direction={"vertical"}
             loop={true}
+            centeredSlides={true}
+            spaceBetween={10}
             autoplay={{
               delay:2000,
               disableOnInteraction: false,
@@ -33,22 +35,22 @@ function Hero() {
             modules={[Autoplay]}
             className="bg-transparent text-[#faf0a7] ml-2 newSwiper text-center">
               <SwiperSlide className="bg-transparent ">
-                <p className="bg-transparent text-6xl">Cocktails</p>
+                <p className="bg-transparent text-7xl">Cocktails</p>
                </SwiperSlide>
                 <SwiperSlide className=" p-2">
-                <p className="text-6xl">Gins</p>
+                <p className="text-7xl">Gins</p>
                 </SwiperSlide>
                 <SwiperSlide className="">
-                <p className="text-6xl">Wines</p>
+                <p className="text-7xl">Wines</p>
                 </SwiperSlide>
                 <SwiperSlide className="">
-                <p className="text-6xl">Martini</p>
+                <p className="text-7xl">Martini</p>
                 </SwiperSlide>
                 <SwiperSlide className="">
-                <p className="text-6xl">Scotch</p>
+                <p className="text-7xl">Scotch</p>
                 </SwiperSlide>
                 <SwiperSlide className="">
-                <p className="text-6xl">Beers</p>
+                <p className="text-7xl">Beers</p>
                 </SwiperSlide>
             </Swiper>
           </motion.div>
@@ -61,7 +63,7 @@ function Hero() {
           className="object-cover h-100v w-full object-center"
         />
       </div>
-      <div className="text-6xl min-h-screen bg-black z-50"></div>
+      <div className="text-7xl min-h-screen bg-black z-50"></div>
 
       <HeroCardsContainer />
       <Categories />

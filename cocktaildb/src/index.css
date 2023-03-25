@@ -20,7 +20,7 @@ html{scroll-behavior: smooth;}
 
   .newSwiper{
     width: min-content !important;
-    height: 10vh;
+    height: 12vh;
   }
   
   .swiper-slide {
