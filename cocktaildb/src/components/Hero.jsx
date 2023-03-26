@@ -12,19 +12,21 @@ import "swiper/css/pagination";
 
 function Hero() {
 // let sections=document.querySelectorAll('section')
- useEffect(() => {
+
   let sections = document.querySelectorAll('section')
 
   sections.forEach((section) => {
-    let options = { threshold: 0.01 }
+    let options = { threshold: 0.29,
+    rootMargin: "0px 0px -100px 0px" } //here the 4 values are top, right, bottom, left margins
     let observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          
+           
           console.log(entry.target.id)
           const anchor = document.querySelector(`a[href="#${entry.target.id}"]`)
+          observer.unobserve(entry.target);
         return  anchor.click()
-
+          
         } else {
           return
         }
@@ -33,7 +35,7 @@ function Hero() {
 
     observer.observe(section)
   })
-}, [])
+
 
   return (
     <div>
