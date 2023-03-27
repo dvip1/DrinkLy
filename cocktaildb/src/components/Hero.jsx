@@ -14,7 +14,8 @@ function Hero() {
 // let sections=document.querySelectorAll('section')
 useEffect(() => {
   let sections = document.querySelectorAll('section')
-
+  let windowWidth = window.innerWidth;
+  if(windowWidth>1024){
   sections.forEach((section) => {
     let options = { threshold: 0.066, 
    } // this 4 values are top, right, bottom, left -ve values are outside the viewport and +ve values are inside the viewport itmeans if you want to observe the element when it is 100px inside the viewport then you have to give -100px in bottom value and positive values means inside the viewport
@@ -35,6 +36,7 @@ useEffect(() => {
  
     observer.observe(section)
   })
+}
  }, [])
 
   return (
