@@ -20,11 +20,11 @@ let Wishtlist = () => {
       {wishlistData.map((drink) => {
         return (
           <div className="">
-            <div className="  flex justify-evenly m-4 border-2 rounded-lg p-3 pl-0">
+            <div className="  flex md:justify-evenly  esm:justify-between esm:pl-3 m-4 border-2 rounded-lg p-3 pl-0 relative">
               <img src={`${drink.image}`} className="w-[22vw] rounded-lg"></img>
-             <div className="">
+             <div className="flex flex-col esm:justify-between md:justify-start items-center">
               <p className="text-2xl text-center">{drink.name}</p>
-              <p>{drink.price}$</p>
+              <p className="">{drink.price}$</p>
               <button onClick={() => handleDelete(drink.id)} className="border">
                 Delete
               </button>
