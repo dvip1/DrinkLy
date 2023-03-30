@@ -88,7 +88,6 @@ function Search() {
       "There was some error loading the data" + error.message
     );
 
-console.log(data)
 
   return (
     <div className="bg-[#3e3e42] text-white">
