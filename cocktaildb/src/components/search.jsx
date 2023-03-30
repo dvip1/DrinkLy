@@ -1,6 +1,6 @@
 import { DataContext } from "./data";
 import { useContext } from "react";
-import Card from "./card";
+import  Card  from "./card";
 
 function Search() {
   let [
@@ -87,6 +87,8 @@ function Search() {
     return console.error(
       "There was some error loading the data" + error.message
     );
+
+console.log(data)
 
   return (
     <div className="bg-[#3e3e42] text-white">
