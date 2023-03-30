@@ -49,6 +49,7 @@ useEffect(()=>{
         slidesPerView={slidesPerView}
         spaceBetween={30}
         centeredSlides={true}
+        loop={true}
         navigation={true}
         pagination={{ dynamicBullets: true }}
         keyboard={{ enabled: true }}
