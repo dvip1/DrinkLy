@@ -90,7 +90,7 @@ function Search() {
 
 
   return (
-    <div className="bg-[#3e3e42] text-white">
+    <div className="bg-[#3e3e42] text-white min-h-screen ">
       <div className="flex justify-center items-center h-16">
         <div className="shadow-lg flex">
           <input
@@ -121,7 +121,7 @@ function Search() {
           </button>
         </div>
       </div>
-      <div className="grid esm:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 md:m-2">
+      <div className="grid esm:grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 md:m-2 md:mb-0">
         {!isError && data?.drinks ? (
           data.drinks.map((drink, index) => (
             <Card
