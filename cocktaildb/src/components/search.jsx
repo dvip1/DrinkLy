@@ -1,6 +1,6 @@
 import { DataContext } from "./data";
 import { useContext } from "react";
-import  Card  from "./card";
+import Card from "./card";
 
 function Search() {
   let [
@@ -19,6 +19,13 @@ function Search() {
     let value = e.target.value;
     setLinkInfo((prev) => ({ ...prev, query: "search", drinkName: value }));
   }
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === 13) {
+      console.log("enter pressed");
+      return refetch();
+    }
+  });
 
   // console.log({isLoading, isFetching})
 
@@ -87,7 +94,6 @@ function Search() {
     return console.error(
       "There was some error loading the data" + error.message
     );
-
 
   return (
     <div className="bg-[#3e3e42] text-white min-h-screen ">
