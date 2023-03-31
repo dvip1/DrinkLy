@@ -21,7 +21,7 @@ function Search() {
   }
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === 13) {
+    if (e.key === 'Enter') {
       console.log("enter pressed");
       return refetch();
     }
