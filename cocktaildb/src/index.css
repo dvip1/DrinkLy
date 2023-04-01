@@ -5,6 +5,7 @@
 html{scroll-behavior: smooth;}
 
 
+
 .active{
     color: aqua;
 }
@@ -55,6 +56,13 @@ html{scroll-behavior: smooth;}
   .swiper-pagination-bullet-active {
     opacity: var(--swiper-pagination-bullet-opacity, 1);
     background:  #d33232;
+  }
+
+  .Mdirection{
+    direction: rtl;
+    transform-origin: right;
+    position: absolute;
+    right: 0%;
   }
 
   @media screen and (max-width:500px){

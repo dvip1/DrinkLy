@@ -2,7 +2,6 @@ import { DataContext } from "./data";
 import { useContext } from "react";
 import Card from "./card";
 
-
 function Search() {
   let [
     data,
@@ -22,13 +21,12 @@ function Search() {
   }
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === 'Enter') {
-      console.log("enter pressed");
+    if (e.key === "Enter") {
       return refetch();
     }
   });
 
-  // console.log({isLoading, isFetching})
+
 
   if (isLoading || isFetching)
     return (

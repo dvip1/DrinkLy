@@ -1,14 +1,13 @@
-import React, { useEffect , useState} from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { userDataContext } from "./userData/userData";
 import { useContext } from "react";
 import MNavbar from "./MNavbar";
 
-
 function Navbar(props) {
   let locationData = useLocation();
 
-let [width,setWidth]=useState(false)
+  let [width, setWidth] = useState(false);
 
   let location = locationData.pathname;
   useEffect(() => {
@@ -19,9 +18,9 @@ let [width,setWidth]=useState(false)
 
   return (
     <div className="w-100v z-50 bg-transparent sticky top-0 transition-all duration-700">
-       <div className="md:hidden">
-        <MNavbar width={width}/>
-        </div>
+      <div className="md:hidden">
+        <MNavbar width={width} />
+      </div>
       <div className="flex justify-between p-3   items-center bg-transparent">
         <NavLink to="/" className="mx-3 ">
           <svg
@@ -52,7 +51,7 @@ let [width,setWidth]=useState(false)
             </g>{" "}
           </svg>
         </NavLink>
-       
+
         <nav className=" flex justify-between  esm:hidden md:flex mx-3 cursor-pointer ">
           <NavLink to="/" className="mx-3 ">
             Home
@@ -103,15 +102,19 @@ let [width,setWidth]=useState(false)
               )}
             </div>
           </NavLink>
-       
-
         </nav>
-        
+
         <div className="md:hidden">
-          <p onClick={()=>setWidth(prev=>!prev)} className="">X
-        
+          <p
+            onClick={() => {
+              setWidth((prev) => !prev);
+              let body = document.querySelector("body");
+              body.classList.toggle("overflow-hidden");
+            }}
+            className="z-50"
+          >
+            X
           </p>
-         
         </div>
       </div>
       <Outlet />
