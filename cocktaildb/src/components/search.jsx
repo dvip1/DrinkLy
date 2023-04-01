@@ -97,7 +97,7 @@ function Search() {
     );
 
   return (
-    <div className="bg-[#3e3e42] text-white min-h-screen ">
+    <div className="bg-[#1e1e1f] text-white min-h-screen ">
       <div className="flex justify-center items-center h-16">
         <div className="shadow-lg flex">
           <input
