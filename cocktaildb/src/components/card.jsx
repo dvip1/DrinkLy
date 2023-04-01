@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { userDataContext } from "./userData/userData";
+import toast ,{Toaster} from 'react-hot-toast';
 
 let Card = (props) => {
   let [wishlistData, setWishlistData, cartData, setCartData] =
@@ -23,6 +24,9 @@ let Card = (props) => {
       ...prev,
       colorSet: !prev.colorSet,
     }));
+
+    activeColor.colorSet?toast.error("Drink Removed from the Wishlist"):toast.success("Drink Added to Wishlist")
+   
 
     let wishlist = {
       name: props.daata.strDrink,
@@ -56,6 +60,10 @@ let Card = (props) => {
       cartColor: !prev.cartColor,
     }));
 
+  
+
+    activeColor.cartColor?toast.error("Drink Removed from the Cart"):toast.success("Drink Added to the Cart")
+
     let Cart = {
       name: props.daata.strDrink,
       image: props.daata.strDrinkThumb,
@@ -70,6 +78,7 @@ let Card = (props) => {
       let deleteDrinkIndex = cartData.findIndex(
         (drink) => drink.name === props.daata.strDrink
       );
+     
 
       setCartData((prevCartData) =>
         prevCartData.filter((drink, index) => {
@@ -127,6 +136,7 @@ let Card = (props) => {
             <p className="text-3xl text-center">{props.title}</p>
           </NavLink>
         </div>
+        <Toaster/>
       </div>
     </>
   );

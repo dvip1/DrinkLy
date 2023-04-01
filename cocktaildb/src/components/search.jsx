@@ -2,6 +2,7 @@ import { DataContext } from "./data";
 import { useContext } from "react";
 import Card from "./card";
 
+
 function Search() {
   let [
     data,
