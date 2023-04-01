@@ -22,7 +22,7 @@ function Navbar(props) {
         <MNavbar width={width} />
       </div>
       <div className="flex justify-between p-3   items-center bg-transparent">
-        <NavLink to="/" className="mx-3 ">
+        <NavLink to="/" className="mx-3" id="logo">
           <svg
             version="1.0"
             xmlns="http://www.w3.org/2000/svg"
@@ -110,6 +110,8 @@ function Navbar(props) {
               setWidth((prev) => !prev);
               let body = document.querySelector("body");
               body.classList.toggle("overflow-hidden");
+              let logo=document.getElementById("logo")
+              logo.classList.toggle("esm:-z-20")
             }}
             className="z-50"
           >
