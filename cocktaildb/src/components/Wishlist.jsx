@@ -17,18 +17,18 @@ let Wishtlist = () => {
 
   return (
     <div
-      className=" md:grid md:grid-cols-2 lg:grid-cols-3 emd:grid-cols-2  esm:grid-cols-1 justify-center items-center"
+      className=" md:grid md:grid-cols-2 lg:grid-cols-3 emd:grid-cols-2  esm:grid-cols-1 justify-center items-center bg-[#232323] text-white"
       key={wishlistData.id}
     >
       {wishlistData.map((drink) => {
         return (
-          <div className="">
+          <div className="flex flex-col justify-center items-center ">
             <div
-              className="  flex md:justify-evenly  esm:justify-between
-             esm:pl-3 m-4 border-[1px] border-[#858585] rounded-lg p-3 pl-0 shadow-sm hover:shadow "
+              className=" md:w-fit esm:w-[70vw] flex emd:justify-start   esm:justify-between
+              m-4 border-[1px] border-[#858585] rounded-lg  shadow-sm hover:shadow overflow-hidden"
             >
-              <img src={`${drink.image}`} className="w-[22vw] rounded-lg"></img>
-              <div className="flex flex-col esm:justify-between md:justify-start lg:justify-center items-center">
+              <img src={`${drink.image}`} className="w-[22vw]"></img>
+              <div className="flex flex-col esm:justify-between emd:justify-start lg:justify-center items-center emd:ml-14 md:ml-0 emd:mt-5 lg:mt-0">
                 <p className="text-2xl text-center">{drink.name}</p>
                 <p className="">{drink.price}$</p>
                 <button
