@@ -1,5 +1,6 @@
 import { userDataContext } from "./userData/userData";
 import { useContext } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 let Wishtlist = () => {
   let [wishlistData, setWishlistData, cartData, setCartData] =
@@ -8,7 +9,10 @@ let Wishtlist = () => {
   let handleDelete = (deleteWishlistId) => {
     setWishlistData((prev) =>
       prev.filter((drink) => {
+
+      drink.id===deleteWishlistId?toast.error(`${drink.name} Removed from the Wishlist`):null
         if (drink.id !== deleteWishlistId) {
+         
           return true;
         }
       })
@@ -27,7 +31,9 @@ let Wishtlist = () => {
               className=" md:w-fit esm:w-[70vw] flex emd:justify-start   esm:justify-between
               m-4 border-[1px] border-[#858585] rounded-lg  shadow-sm hover:shadow overflow-hidden"
             >
+          
               <img src={`${drink.image}`} className="w-[22vw]"></img>
+             
               <div className="flex flex-col esm:justify-between emd:justify-start lg:justify-center items-center emd:ml-14 md:ml-0 emd:mt-5 lg:mt-0">
                 <p className="text-2xl text-center">{drink.name}</p>
                 <p className="">{drink.price}$</p>
@@ -55,6 +61,7 @@ let Wishtlist = () => {
           </div>
         );
       })}
+      <Toaster />
     </div>
   );
 };
