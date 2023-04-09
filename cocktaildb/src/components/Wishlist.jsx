@@ -36,7 +36,7 @@ let Wishtlist = () => {
              
               <div className="flex flex-col esm:justify-between emd:justify-start lg:justify-center items-center emd:ml-14 md:ml-0 emd:mt-5 lg:mt-0">
                 <p className="text-2xl text-center">{drink.name}</p>
-                <p className="">{drink.price}$</p>
+                <p className="">${drink.price}</p>
                 <button
                   onClick={() => handleDelete(drink.id)}
                   className="bg-[#d84848] text-white rounded-lg p-1"
