@@ -68,7 +68,8 @@ let Card = (props) => {
     let Cart = {
       name: props.daata.strDrink,
       image: props.daata.strDrinkThumb,
-      id: props.daata.idDrink * 2, //this is done to make the id unique because the id of the drink in cart and wishlist is same
+      id: props.daata.idDrink * 2,
+      price:Math.floor(Math.random()*10)+0.99 //this is done to make the id unique because the id of the drink in cart and wishlist is same
     };
     let isAddedToCart =
       cartData?.filter((drink) => drink.name === props.daata.strDrink).length >
